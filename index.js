@@ -10,9 +10,11 @@ const es6Renderer = require('express-es6-template-engine');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 
+const { layout } = require('./utils');
 const homeController = require('./controllers/home');
 const {
     userRouter,
+    todoRouter
 } = require('./routers/index');
 
 const { requireLogin } = require('./auth')
@@ -25,6 +27,7 @@ const HOST = '0.0.0.0';
 
 const logger = morgan('tiny');
 
+app.use(express.static('public'))
 app.engine('html', es6Renderer);
 app.set('views', 'templates');
 app.set('view engine', 'html');
@@ -60,18 +63,16 @@ app.use(requireLogin);
 app.get('/members-only', (req, res) => {
     console.log(req.session.user);
     const { username } = req.session.user;
-    res.send(`
-
-<h1>Hi ${username}!</h1>
-<p>Want to add some dinner ideas?</p>
-<a href="/ideas/new">Click Here</a>
-<br>
-<a href="/ideas">Dinner Idea List</a>
-<br>
-<a href="/users/logout">Log out</a>
-    `);
+    res.render('members', {
+        locals: {
+            username
+        },
+        ...layout 
+    });
 });
-//pp.use('/ideas', ideasRouter)
+
+app.use('/todo', todoRouter)
+
 app.get('/unauthorized', (req, res) => {
     res.send(`You shall not pass!`);
 });
