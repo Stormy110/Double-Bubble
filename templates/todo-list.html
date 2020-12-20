@@ -1,20 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do List</title>
-  </head>
-  <body>
+${header}
+<div id="todo-list-div">
+  <div id="todo-list-header">
     <h1>To Do List</h1>
-    <br>
-    <ul>
-      ${todos.map(t => `
-      <li>${t.name} --- Status: ${t.status}</li>
-      `).join('')}
-    </ul>
-    <a href="/members-only">Back</a>
-    <br />
-    <a href="/todo/new">Add to do</a>
-  </body>
-</html>
+  </div>
+  <div id="todo-lists">
+    <div id="todo-list-incomplete">
+      <h3>Incomplete</h3>
+      <ul>
+        ${todos.map(t=>{ if(t.status == 'Incomplete'){ return `
+        <li>${t.name}</li>
+        ` } }).join('')}
+      </ul>
+    </div>
+
+    <div id="todo-list-complete">
+      <h3>Complete</h3>
+      <ul>
+        ${todos.map(t=>{ if(t.status == 'Complete'){ return `
+        <li>${t.name}</li>
+        ` } }).join('')}
+      </ul>
+    </div>
+  </div>
+  <br>
+  <div class="todo-list-links">
+    <button class="todo-list-links-button">
+      <a href="/todo/new">Add to do</a>
+    </button>
+    <button class="todo-list-links-button">
+      <a href="/members-only">Back</a>
+    </button>
+  </div>
+</div>
+${footer}

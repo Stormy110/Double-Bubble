@@ -3,13 +3,14 @@ body {
   flex-direction: column;
   background-image: url("../images/background.jpg");
   align-items: center;
+  font-family: "Shadows Into Light", cursive;
 }
 #home-div {
   padding: 20px 20px;
   margin-top: 10%;
-  width: 70%;
+  width: 50%;
   height: 70%;
-  font-family: "Exo", sans-serif;
+  font-family: "Shadows Into Light", cursive;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   -webkit-animation: gradientBG 10s ease infinite;
@@ -42,9 +43,9 @@ body {
   align-items: center;
   padding: 10px 15px 20px 15px;
   margin-top: 10%;
-  width: 70%;
+  width: 50%;
   height: 70%;
-  font-family: "Exo", sans-serif;
+  font-family: "Shadows Into Light", cursive;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   -webkit-animation: gradientBG 10s ease infinite;
@@ -87,15 +88,15 @@ body {
 #members-div {
   display: flex;
   flex-direction: column;
-  padding: 20px 20px;
-  width: 70%;
-  height: 80%;
-  font-family: "Exo", sans-serif;
+  padding: 10px 10px;
+  width: 50%;
+  height: 70%;
+  font-family: "Shadows Into Light", cursive;
 }
 #members-header {
   display: flex;
   justify-content: center;
-  font-size: 5vw;
+  font-size: 4vw;
   color: purple;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
@@ -104,7 +105,7 @@ body {
 }
 #members-main {
   display: flex;
-  height: 50vh;
+  height: 60vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -114,31 +115,137 @@ body {
   animation: gradientBG 10s ease infinite;
 }
 #members-main h3 {
-  background: silver -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#acacac));
-  font-size: 21px;
+  background: purple -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#acacac));
+  font-size: 30px;
   font-display: bold;
-  border:purple 5px solid;
-  padding:5px 5px;
+  padding: 5px 5px;
   background-position: -4rem top; /*50px*/
   background-repeat: no-repeat;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-animation-name: shimmer;
-  -webkit-animation-duration: 2.2s;
+  -webkit-animation-duration: 3.2s;
   -webkit-animation-iteration-count: 1;
   -webkit-background-size: 4rem 100%; /*50px*/
 }
 #members-main button {
-    width:40%;
-    height:100%;
-    background-color:purple;
-    margin-bottom:1vh;
+  width: 40%;
+  height: 100%;
+  background-color: purple;
+  margin-bottom: 1vh;
+  
 }
 #members-main a {
-    color:white;
-    font-size:15px;
-    text-decoration:none;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
 }
+#todo-form-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 15px 20px 15px;
+  margin-top: 10%;
+  width: 50%;
+  height: 70%;
+  font-family: "Shadows Into Light", cursive;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: gradientBG 10s ease infinite;
+  animation: gradientBG 10s ease infinite;
+}
+#todo-form-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#todo-form-header {
+  background: purple -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#acacac));
+  font-size: 21px;
+  font-display: bold;
+  padding: 5px 5px;
+  background-position: -4rem top; /*50px*/
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation-name: shimmer;
+  -webkit-animation-duration: 3.2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-background-size: 4rem 100%; /*50px*/
+}
+#todo-input {
+  transition: width 0.4s ease-in-out;
+}
+#todo-input:focus {
+  width: 100%;
+}
+.todo-form-status {
+  color: purple;
+}
+#todo-form-submit {
+  background-color: purple;
+  color: white;
+  margin-left: 40%;
+  margin-right: 50%;
+}
+#todo-list-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 15px 20px 15px;
+  margin-top: 10%;
+  width: 50%;
+  height: 70%;
+  font-family: "Shadows Into Light", cursive;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: gradientBG 10s ease infinite;
+  animation: gradientBG 10s ease infinite;
+}
+#todo-list-header {
+  background: purple -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#acacac));
+  font-size: 21px;
+  font-display: bold;
+  padding: 5px 5px;
+  background-position: -4rem top; /*50px*/
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation-name: shimmer;
+  -webkit-animation-duration: 3.2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-background-size: 4rem 100%; /*50px*/
+}
+#todo-lists {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+#todo-list-complete {
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    border:purple solid 2px;
+}
+#todo-list-incomplete {
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    border:purple solid 2px;
+}
+.todo-list-links-button {
+    background-color:purple;
+
+}
+.todo-list-links a {
+    color:white;
+}
+#todo-lists h3{
+    text-decoration: underline;
+
+}
+
 
 @-webkit-keyframes shimmer {
   0% {

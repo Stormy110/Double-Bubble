@@ -1,17 +1,27 @@
 ${header}
-<h1>To Do Planner</h1>
-<form method="POST">
-  <label>
-    To-do:
-    <input name="name" type="text" autofocus />
-  </label>
-  <br>
-  <label>
-    Status:
-    <input name="status" type="checkbox" value="Complete">Complete</input>
-    <input name="status" type="checkbox" value="Incomplete"/>Incomplete</input>
-  </label>
-  <br>
- <input type="submit" value="do it!" />
-</form>
+<div id="todo-form-div">
+    <div id="todo-form-header">
+        <h1>To Do Planner</h1>
+    </div>
+    <div id="todo-form-main">
+        <form method="POST">
+        <label>
+            To-do:
+            <input id="todo-input" name="name" type="text" />
+        </label>
+        <br>
+        <br>
+        <br>
+        <label>
+            Status:
+            <input class="todo-form-status" name="status" type="checkbox" value="Complete">Complete</input>
+            <input class="todo-form-status" name="status" type="checkbox" value="Incomplete"/>Incomplete</input>
+        </label>
+        <br>
+        <br>
+        <br>
+        <input id="todo-form-submit" type="submit" value="Submit it!" />
+        </form>
+    </div>
+</div>
 ${footer}
