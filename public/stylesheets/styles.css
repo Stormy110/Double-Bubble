@@ -22,6 +22,17 @@ body {
   justify-content: center;
   font-size: 5vw;
   color: purple;
+  background: purple -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#acacac));
+  font-display: bold;
+  padding: 5px 5px;
+  background-position: -4rem top; /*50px*/
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation-name: shimmer;
+  -webkit-animation-duration: 3.2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-background-size: 4rem 100%; /*50px*/
 }
 #home-links {
   display: flex;
@@ -56,6 +67,17 @@ body {
   justify-content: center;
   font-size: 5vw;
   color: purple;
+  background: purple -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#acacac));
+  font-display: bold;
+  padding: 5px 5px;
+  background-position: -4rem top; /*50px*/
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation-name: shimmer;
+  -webkit-animation-duration: 3.2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-background-size: 4rem 100%; /*50px*/
 }
 #login-form {
   display: flex;
@@ -195,7 +217,7 @@ body {
   align-items: center;
   padding: 10px 15px 20px 15px;
   margin-top: 10%;
-  width: 50%;
+  width: 70%;
   height: 70%;
   font-family: "Shadows Into Light", cursive;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -205,7 +227,7 @@ body {
 }
 #todo-list-header {
   background: purple -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#acacac));
-  font-size: 21px;
+  font-size: 30px;
   font-display: bold;
   padding: 5px 5px;
   background-position: -4rem top; /*50px*/
@@ -225,12 +247,16 @@ body {
 #todo-list-complete {
     display:flex;
     flex-direction:column;
+    font-size:20px;
+    padding:25px 50px;
     align-items: center;
     border:purple solid 2px;
 }
 #todo-list-incomplete {
     display:flex;
     flex-direction:column;
+    font-size:20px;
+    padding:25px 50px;;
     align-items: center;
     border:purple solid 2px;
 }
@@ -244,6 +270,10 @@ body {
 #todo-lists h3{
     text-decoration: underline;
 
+}
+#empty-list {
+    height:100%;
+    width:20%;
 }
 
 
@@ -282,4 +312,7 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+@media only screen and (max-width: 600px) {
+    
 }
