@@ -1,5 +1,7 @@
 require('dotenv').config();    // don't forget to require dotenv
 
+
+const { Todo } = require('./models');
 const http = require('http');
 const express = require('express');
 const morgan = require('morgan');
@@ -70,6 +72,64 @@ app.get('/members-only', (req, res) => {
         ...layout 
     });
 });
+
+// this is for updating the database
+app.get('/todo/:id', async (req,res)=>{
+
+    console.log(`The id is ${req.params.id}`);
+    const todo = await Todo.findByPk(req.params.id);
+    res.render('todo-form2',{
+        locals: {
+            todoName: todo.name
+        },
+        ...layout
+    })
+});
+
+app.post('/todo/:id', async (req,res)=>{
+    const { name } = req.body;
+    const { id } = req.params;
+
+    const updatedTodo = await Todo.update({
+        name
+    },{
+        where: {
+            id
+        }
+     });
+     res.redirect('/todo')
+});
+
+// this is for deleting something in the database
+app.get('/todo/:id/delete', async (req,res)=>{
+    //show them the delete form
+
+    // get the id from req.params
+    const { id } = req.params;
+    //get the todo from the database
+    const todo = await Todo.findByPk(id)
+    //render the delete form, showing the title
+    res.render('delete',{
+        locals: {
+            name: "Delete todo",
+            todoName: todo.name
+        },
+        ...layout
+    })
+});
+
+app.post('/todo/:id/delete', async (req,res)=>{
+   // process the delete form
+
+    const { id } = req.params;
+    const deletedTodo = await Todo.destroy({
+        where: {
+            id
+        }
+    });
+    res.redirect('/todo')
+});
+
 
 app.use('/todo', todoRouter)
 

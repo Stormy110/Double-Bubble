@@ -1,0 +1,27 @@
+${header}
+<div id="todo-form-div">
+    <div id="todo-form-header">
+        <h1>To Do Planner</h1>
+    </div>
+    <div id="todo-form-main">
+        <form method="POST">
+        <label>
+            To-do:
+            <input id="todo-input" name="name" type="text" value="${todoName}"/>
+        </label>
+        <br>
+        <br>
+        <br>
+        <label>
+            Status:
+            <input class="todo-form-status" name="status" type="checkbox" value="Complete">Complete</input>
+            <input class="todo-form-status" name="status" type="checkbox" value="Incomplete"/>Incomplete</input>
+        </label>
+        <br>
+        <br>
+        <br>
+        <input id="todo-form-submit" type="submit" value="Submit it!" />
+        </form>
+    </div>
+</div>
+${footer}
